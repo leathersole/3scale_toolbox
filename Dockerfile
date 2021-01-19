@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY . .
 RUN gem build 3scale_toolbox.gemspec
 RUN gem install 3scale_toolbox-*.gem --no-document
-RUN adduser  --home /home/toolboxuser toolboxuser
+RUN useradd -ms /bin/bash toolboxuser
 WORKDIR /home/toolboxuser
 
 # clean up
